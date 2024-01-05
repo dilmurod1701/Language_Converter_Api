@@ -82,7 +82,7 @@ class FileConverter(CreateAPIView):
             else:
                 return Response({'error: must be context and pattern(latin or cyrillic)'})
             username = os.getlogin()
-            with open(f'C:\\Users\\{username}\\Desktop\\result.txt', 'w', encoding='utf-8') as f:
+            with open(f'C:\\Users\\{username}\\Desktop\\result.txt', 'a+', encoding='utf-8') as f:
                 f.write(result)
             return Response({'result': 'check your desktop'})
 
