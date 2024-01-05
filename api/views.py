@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.generics import CreateAPIView
+import os
 
 from .models import File
 from .serializers import FileSerializer
@@ -80,7 +81,10 @@ class FileConverter(CreateAPIView):
                         result += each
             else:
                 return Response({'error: must be context and pattern(latin or cyrillic)'})
-            return Response({'result': result})
+            username = os.getlogin()
+            with open(f'C:\\Users\\{username}\\Desktop\\result.txt', 'w', encoding='utf-8') as f:
+                f.write(result)
+            return Response({'result': 'check your desktop'})
 
 
 def migration(request):
