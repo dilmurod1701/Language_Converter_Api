@@ -82,7 +82,7 @@ class FileConverter(CreateAPIView):
                 return Response({'error: must be context and pattern(latin or cyrillic)'})
             with open('C:/Users/Dilmurod/Desktop/result.txt', 'w', encoding='utf-8') as f:
                 f.write(result)
-            return Response({'result': 'done check your desktop'})
+            return Response({'result': result})
 
 
 def migration(request):
