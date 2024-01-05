@@ -80,8 +80,6 @@ class FileConverter(CreateAPIView):
                         result += each
             else:
                 return Response({'error: must be context and pattern(latin or cyrillic)'})
-            with open('C:/Users/Dilmurod/Desktop/result.txt', 'w', encoding='utf-8') as f:
-                f.write(result)
             return Response({'result': result})
 
 
